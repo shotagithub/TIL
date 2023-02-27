@@ -1,3 +1,46 @@
+# ２つのテーブルのFKに一致する特定のレコードの取り出し方
+### 2023/02/27
+
+購入者が商品をダウンロードできるといった分岐を作りたい時には、  
+コントローラー側で外部キーの整合性がとれるレコードを拾ってくる必要がある。  
+
+```ruby
+def show
+    @product.find(params[:id]
+    products = @product.id # 現在の商品ページのidを取得
+    user = current_user.id # 現在のユーザーのidを取得
+
+    # 上記二つを取得した上で外部キーでレコードを絞り込む
+    @order = Order.where(user_id: user).where(product_id: products)
+end
+```
+
+このような記述にしビュー側で. 
+
+```ruby
+if @order.present?
+```
+
+と記述するとユーザーがその商品を購入したか否かを判定できる。  
+
+```ruby
+@user.order.user_id
+@product.order.product_id
+```
+このようなビューの記述だとレコードが絞れないor参照する情報が違うので分岐に失敗する。  
+外部キーを意識することがいかに大切かがわかる。  
+ちなみに、  
+
+```ruby
+@order = Order.where("user_id = user").where("product_id = products")
+```
+
+みたいな記述でもいけるが、  
+SQLインジェクションのリスクが上がるので、  
+シンボルの使用推奨。
+
+
+
 # 配列内の重複しない値のみを足すプログラム
 ### 2023/02/21
 
