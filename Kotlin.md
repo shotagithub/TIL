@@ -66,4 +66,22 @@ println(ary) // データ　data
 println(ary[0]) // データ
 println(ary[1]) // data
 
+ary[0] = "でーた" // 要素を指定して再代入
+println(ary) // でーた　data
 ```
+
+多次元配列
+
+```kotlin
+var ary1 = arrayListOf("田中","佐藤","鈴木")
+var ary2 = arrayListOf("太郎","花子")
+
+var aryList = arrayListOf(ary1, ary2)
+
+println(aryList) // [[田中, 佐藤, 鈴木], [太郎, 花子]]
+println(aryList[0]) // [田中, 佐藤, 鈴木]
+println(aryList[1]) // [太郎, 花子]
+println(aryList[0][0]) // 田中
+println(aryList[0][1]) // 佐藤
+```
+
