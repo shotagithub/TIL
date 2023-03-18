@@ -44,9 +44,9 @@ val 変数名: 型 = 値
 
 ```kotlin
 Int 1
-Long 1L
+Long 1L　// 尻にL
 Double 1.1
-Float 1.1F
+Float 1.1F // 尻にF
 桁区切り　1_111_111
 
 Char 'a' シングルクウォート
@@ -54,3 +54,16 @@ String　"a" ダブルクウォート
 ```
 
 バックスラッシュ記法あり  
+  
+配列
+```kotlin
+var 変数 = arrayListOf(データ,data)
+val 変数 = arrayListOf(データ,data)
+
+var ary = arrayListOf("データ","data")
+
+println(ary) // データ　data
+println(ary[0]) // データ
+println(ary[1]) // data
+
+```
