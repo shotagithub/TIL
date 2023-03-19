@@ -1,3 +1,42 @@
+# クラス継承テスト
+### 2023/03/19
+
+```ruby
+class Human
+
+  def initialize(human_name, human_age)
+    @human_state = {}
+    
+    @human_state[:name] = human_name
+    @human_state[:age] = human_age
+  end
+
+  def eat(food)
+    puts "#{@human_state[:name]}は#{food}を食べる"
+  end
+
+  def walk(place)
+    puts "#{@human_state[:name]}は#{place}を歩く"
+  end
+end
+
+class HumanGreat < Human
+  def great(who)
+   puts "hello #{who}"
+  end
+end
+
+taro = Human.new("太郎", 18)
+taro.eat("家系ラーメン")
+taro.walk("東白楽")
+
+
+hanako = HumanGreat.new("花子", 15)
+hanako.eat("カレー")
+hanako.walk("横須賀")
+hanako.great("world")
+```
+
 # セッションとは？
 ### 2023/03/15
 セッションはステートフルな（ページを移動しても状態を維持する）仕組み。  
