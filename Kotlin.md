@@ -85,3 +85,22 @@ println(aryList[0][0]) // 田中
 println(aryList[0][1]) // 佐藤
 ```
 
+# 配列、for文テスト
+### 2023/03/19
+```kotlin
+fun main(){
+    var ary = arrayListOf(10,20,30,40)
+
+    for (num in ary) {
+        if (num >= 10 && num < 20) {
+            println("10代")
+        } else if (num >= 20 && num < 30) {
+            println("20代")
+        } else if (num >= 30 && num < 40) {
+            println("30代")
+        } else {
+            println("それ以外")
+        }
+    }
+}
+```
